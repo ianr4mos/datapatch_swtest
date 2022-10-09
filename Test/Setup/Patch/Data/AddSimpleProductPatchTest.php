@@ -28,6 +28,11 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 class AddSimpleProductPatchTest implements DataPatchInterface
 {
     /**
+     * @var CategoryLinkManagementInterface
+     */
+    protected CategoryLinkManagementInterface $categoryLink;
+
+    /**
      * @var ProductInterfaceFactory
      */
     protected ProductInterfaceFactory $productFactory;
@@ -98,11 +103,17 @@ class AddSimpleProductPatchTest implements DataPatchInterface
         $this->categoryLink = $categoryLink;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function apply(): void
     {
         $this->appState->emulateAreaCode('adminhtml', [$this, 'execute']);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function execute(): void
     {
         $product = $this->productFactory->create();
