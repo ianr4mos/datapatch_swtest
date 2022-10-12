@@ -104,7 +104,7 @@ class AddSimpleProductPatchTest implements DataPatchInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @return void
      */
     public function apply(): void
     {
@@ -112,7 +112,7 @@ class AddSimpleProductPatchTest implements DataPatchInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @return void
      */
     public function execute(): void
     {
@@ -149,7 +149,7 @@ class AddSimpleProductPatchTest implements DataPatchInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @return array
      */
     public static function getDependencies(): array
     {
@@ -157,7 +157,7 @@ class AddSimpleProductPatchTest implements DataPatchInterface
     }
 
     /**
-     * {@inheritDoc}
+     * @return array
      */
     public function getAliases(): array
     {
